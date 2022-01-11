@@ -115,8 +115,10 @@
 
         @*แนะนำร้านอาหารเกิดใหม่*@
         <div class="container px-4 px-lg-5 mt-5">
+
+            <p><span style="color: white" class="display-6 fw-bolder">แนะนำร้านอาหารเกิดใหม่</span></p>
             <div class="divider-custom divider-light">
-                <h1 style="color: white; font-size: 42px">แนะนำร้านอาหารเกิดใหม่</h1>
+                @*<h1 style="color: white; font-size: 42px">แนะนำร้านอาหารเกิดใหม่</h1>*@
                 <div class="divider-custom-line"></div>
             </div>
 
@@ -149,7 +151,7 @@
                                     <!-- time -->
                                     @Model.ElementAt(indexItem).time
                                 </div>
-                                </div>
+                            </div>
 
 
                             <!-- Product actions-->
@@ -168,116 +170,118 @@
         </div>
         @*แนะนำร้านอาหารเกิดใหม่*@
 
-        @*ร้านอาหารตามสไตล์คุณ*@
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="divider-custom divider-light">
-                <h1 style="color: white; font-size: 42px">ร้านอาหารตามสไตล์คุณ</h1>
-                <div class="divider-custom-line"></div>
-            </div>
+                @*ร้านอาหารตามสไตล์คุณ*@
+                <div class="container px-4 px-lg-5 mt-5">
 
-            @for (var i = 1; i <= 4; i++)
-            {
-                var indexItem = i - 1;
-                if (i == 1 || i % 4 == 1)
-                {
-                    @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    }
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Status New-->
-                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
-                            <!-- Product image -->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            @*<img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />-->*@
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">ก๋วยเตี๋ยวลูกชิ้นระเบิด มทส.</h5>
-                                    @*<h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>*@
-                                    <!-- time -->
-                                    09.00AM. - 18.00PM.
-                                    @*@Model.ElementAt(indexItem).time>*@
-                                </div>
-                            </div>
-
-
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
-                                </div>
-                            </div>
-                        </div>
+                    <p><span style="color: white" class="display-6 fw-bolder">ร้านอาหารตามสไตล์คุณ</span></p>
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
                     </div>
-                    if (i % 4 == 0)
+
+                    @for (var i = 1; i <= 4; i++)
                     {
-                    @:</div>
-                }
-            }
-        </div>
-        @*ร้านอาหารตามสไตล์คุณ*@
-
-        @*ร้านโปรดของคุณ*@
-        <div class="container px-4 px-lg-5 mt-5">
-            <div class="divider-custom divider-light">
-                <h1 style="color: white; font-size: 42px">ร้านโปรดของคุณ</h1>
-                <div class="divider-custom-line"></div>
-            </div>
-
-            @for (var i = 1; i <= 1; i++)
-            {
-                var indexItem = i - 1;
-                if (i == 1 || i % 4 == 1)
-                {
-                    @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    }
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Status New-->
-                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
-                            <!-- Product image -->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            @*<img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />-->*@
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">หมี่เกี๋ยว มทส.</h5>
-                                    @*<h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>*@
-
-                                    <!-- Product reviews-->
-                                    <div class="d-flex justify-content-center small text-warning mb-2">
-                                        @for (var s = 1; s <= 3; s++)
-                                        {
-                                            <div class="bi-star-fill"></div>
-                                        }
+                        var indexItem = i - 1;
+                        if (i == 1 || i % 4 == 1)
+                        {
+                            @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                            }
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Status New-->
+                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
+                                    <!-- Product image -->
+                                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                    @*<img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />-->*@
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">ก๋วยเตี๋ยวลูกชิ้นระเบิด มทส.</h5>
+                                            @*<h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>*@
+                                            <!-- time -->
+                                            09.00AM. - 18.00PM.
+                                            @*@Model.ElementAt(indexItem).time>*@
+                                        </div>
                                     </div>
 
-                                    <!-- time -->
-                                    09.00AM. - 18.00PM.
-                                    @*@Model.ElementAt(indexItem).time>*@
+
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            if (i % 4 == 0)
+                            {
+                            @:</div>
+                        }
+                    }
+                </div>
+                @*ร้านอาหารตามสไตล์คุณ*@
 
+                @*ร้านโปรดของคุณ*@
+                <div class="container px-4 px-lg-5 mt-5">
 
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
-                                </div>
-                            </div>
-                        </div>
+                    <p><span style="color: white" class="display-6 fw-bolder">ร้านโปรดของคุณ</span></p>
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
                     </div>
-                    if (i % 4 == 0)
+
+                    @for (var i = 1; i <= 1; i++)
                     {
-                    @:</div>
-                }
-            }
-        </div>
-        @*ร้านอาหารตามสไตล์คุณ*@
-    </section>
+                        var indexItem = i - 1;
+                        if (i == 1 || i % 4 == 1)
+                        {
+                            @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                            }
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Status New-->
+                                    <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
+                                    <!-- Product image -->
+                                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                    @*<img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />-->*@
+                                    <!-- Product details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+
+                                            <!-- Product name-->
+                                            <h5 class="fw-bolder">หมี่เกี๋ยว มทส.</h5>
+                                            @*<h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>*@
+
+                                            <!-- Product reviews-->
+                                            <div class="d-flex justify-content-center small text-warning mb-2">
+                                                @for (var s = 1; s <= 3; s++)
+                                                {
+                                                    <div class="bi-star-fill"></div>
+                                                }
+                                            </div>
+
+                                            <!-- time -->
+                                            09.00AM. - 18.00PM.
+                                            @*@Model.ElementAt(indexItem).time>*@
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Product actions-->
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            if (i % 4 == 0)
+                            {
+                            @:</div>
+                        }
+                    }
+                </div>
+                @*ร้านอาหารตามสไตล์คุณ*@
+</section>
 
 
 </body>
