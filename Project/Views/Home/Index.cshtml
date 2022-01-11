@@ -1,0 +1,284 @@
+﻿@model IEnumerable<Project.Store>
+
+@{
+    ViewBag.Title = "SUT IN SIDE";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="@Url.Content("~/Content/Style1.css")" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container px-4 px-lg-5">
+            <b><a class="navbar-brand" href="@Url.Action("Index", "Home")">SUT IN SIDE</a></b>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <!--<li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><hr class="dropdown-divider" /></li>
+                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                        </ul>
+                    </li>-->
+
+                </ul>
+
+                <form class="d-flex">
+                    <!--<button class="btn btn-outline-dark" type="submit">-->
+                    <!--<i class="bi-cart-fill me-1"></i>-->
+                    <!--<span class="badge bg-dark text-white ms-1 rounded-pill">0</span>-->
+                    <!--</button>-->
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header-->
+    <br />
+    <header class="bg-dark-edit py-5">
+
+        <div class="container px-4 px-lg-5 my-5">
+            <!--<div class="text-center text-black">-->
+            <p><span class="display-4 fw-bolder">สมศรี มีสุข</span></p>
+            <p><span class="lead fw-normal text-black-50 mb-0">คะแนนสะสมของคุณ : 7500 point</span></p>
+            <!--<h1 class="display-4 fw-bolder">สมศรี มีสุข</h1>-->
+            <!--<p class="lead fw-normal text-black-50 mb-0">500 point</p>-->
+            <!--<div class="bg-dark-edit-in">
+                <p class="text-black-50-edit">ค้นหามื้ออาหารอร่อย ตรงนี้ !</p>
+            </div>-->
+            <!--<div class="div-edit text-black-50-edit">ค้นหามื้ออาหารอร่อย ตรงนี้ !</div>-->
+
+            <div class="example">
+                @using ((Html.BeginForm()))
+                {
+                    @Html.TextBox("searchString", null, new { @placeholder = "ค้นหามื้ออาหารอร่อย ตรงนี้ !" })
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                }
+
+            </div>
+
+
+        </div>
+        <!--</div>-->
+
+    </header>
+
+    <!--<div class="container">
+        <div class="row">
+            <div class="col text-right">
+                @Html.ActionLink("เพิ่มร้านค้า", "Create", null, new { @class = "btn btn-success" })
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="div-edit text-black-50-edit">
+                @using ((Html.BeginForm()))
+                {
+                    @Html.TextBox("searchString", null, new { @placeholder = "ค้นหาชื่อร้านค้า" })
+                    <input type="submit" class="btn btn-info" value="Search" />
+                }
+            </div>
+        </div>
+    </div>-->
+
+    <section class="py-5">
+
+        @*แนะนำร้านอาหารเกิดใหม่*@
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="divider-custom divider-light">
+                <h1 style="color: white; font-size: 42px">แนะนำร้านอาหารเกิดใหม่</h1>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            @for (var i = 1; i <= Model.ToList().Count(); i++)
+            {
+                var indexItem = i - 1;
+                if (i == 1 || i % 4 == 1)
+                {
+                    @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    }
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Status New-->
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
+                            <!-- Product image -->
+                            <img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />
+                            <!-- <img class="img-responsive" style="max-width: 70%;" src=@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url)) /> -->
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        @for (var s = 1; s <= Model.ElementAt(indexItem).Review; s++)
+                                        {
+                                            <div class="bi-star-fill"></div>
+                                        }
+                                    </div>
+                                    <!-- time -->
+                                    @Model.ElementAt(indexItem).time
+                                </div>
+                                </div>
+
+
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    if (i % 4 == 0)
+                    {
+                    @:</div>
+                }
+            }
+        </div>
+        @*แนะนำร้านอาหารเกิดใหม่*@
+
+        @*ร้านอาหารตามสไตล์คุณ*@
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="divider-custom divider-light">
+                <h1 style="color: white; font-size: 42px">ร้านอาหารตามสไตล์คุณ</h1>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            @for (var i = 1; i <= 4; i++)
+            {
+                var indexItem = i - 1;
+                if (i == 1 || i % 4 == 1)
+                {
+                    @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    }
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Status New-->
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
+                            <!-- Product image -->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            @*<img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />-->*@
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">ก๋วยเตี๋ยวลูกชิ้นระเบิด มทส.</h5>
+                                    @*<h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>*@
+                                    <!-- time -->
+                                    09.00AM. - 18.00PM.
+                                    @*@Model.ElementAt(indexItem).time>*@
+                                </div>
+                            </div>
+
+
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    if (i % 4 == 0)
+                    {
+                    @:</div>
+                }
+            }
+        </div>
+        @*ร้านอาหารตามสไตล์คุณ*@
+
+        @*ร้านโปรดของคุณ*@
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="divider-custom divider-light">
+                <h1 style="color: white; font-size: 42px">ร้านโปรดของคุณ</h1>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            @for (var i = 1; i <= 1; i++)
+            {
+                var indexItem = i - 1;
+                if (i == 1 || i % 4 == 1)
+                {
+                    @:<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    }
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Status New-->
+                            <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem">New!</div>
+                            <!-- Product image -->
+                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            @*<img class="card-img-top" src="@Url.Content("~/Content/images/" + (Model.ElementAt(indexItem).url))" alt="..." />-->*@
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+
+                                    <!-- Product name-->
+                                    <h5 class="fw-bolder">หมี่เกี๋ยว มทส.</h5>
+                                    @*<h5 class="fw-bolder">@Model.ElementAt(indexItem).name</h5>*@
+
+                                    <!-- Product reviews-->
+                                    <div class="d-flex justify-content-center small text-warning mb-2">
+                                        @for (var s = 1; s <= 3; s++)
+                                        {
+                                            <div class="bi-star-fill"></div>
+                                        }
+                                    </div>
+
+                                    <!-- time -->
+                                    09.00AM. - 18.00PM.
+                                    @*@Model.ElementAt(indexItem).time>*@
+                                </div>
+                            </div>
+
+
+                            <!-- Product actions-->
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Details")">ดูเพิ่มเติม</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    if (i % 4 == 0)
+                    {
+                    @:</div>
+                }
+            }
+        </div>
+        @*ร้านอาหารตามสไตล์คุณ*@
+    </section>
+
+
+</body>
+</html>
